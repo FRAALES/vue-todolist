@@ -6,12 +6,12 @@ const {createApp} = Vue;
 
 //Dichiaro le variabili
 let compitoBucato = {
-    "text": ['Fare il bucato'],
+    "text": 'Fare il bucato',
     "done": [true, false],
 };
 
 let compitoLetto = {
-    "text": ['Fare il letto'],
+    "text": 'Fare il letto',
     "done": [true, false],
 };
 
@@ -28,6 +28,11 @@ createApp ({
         }
     },
     methods: {
+
+        // MILESTONE 3
+        // Predisporre un campo di input testuale e un pulsante “aggiungi”: cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo task, che quindi viene aggiunto alla lista dei task esistenti.
+
+
         aggiungiTask(){
             //console.log(this.newTask);
             if(this.newTask !== '' && this.newTask.length >= 5){
@@ -38,6 +43,11 @@ createApp ({
             }
             this.newTask='';
         },
+
+
+        //MILESTONE 2
+        //Visualizzare a fianco ad ogni item ha una “x”: cliccando su di essa, il task viene rimosso dalla lista.
+
         rimuoviTask(indice){
             //console.log(indice);
             this.tasks.splice(indice, 1);
