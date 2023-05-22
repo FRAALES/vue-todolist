@@ -11,16 +11,22 @@
 <body>
     <div id="app" class="container">
         <div class="new-task">
-            <input type="text" placeholder="Nuova task">
-            <button>Aggiungi</button>
+            <input type="text" placeholder="Nuova task"
+            v-model="newTask" @keyup.enter="aggiungiTask">
+            <button @click="aggiungiTask">Aggiungi</button>
+
+            <!-- output errore in pagina -->
+            <div class="error" v-if="error">
+                <small style="color:red">Devi inserire una task di almeno 5 caratteri</small>
+            </div>
 
         </div>
 
         <div class="tasks-container">
             <ul>
-                <li class="task">
-                    testo del task
-                    <i class="fas fa-times"></i>
+                <li class="task" v-for="(task, index) in tasks">
+                    {{task}}
+                    <i class="fas fa-times" @click="rimuoviTask(index)"></i>
                 </li>
 
             </ul>
