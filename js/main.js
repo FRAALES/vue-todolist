@@ -7,15 +7,25 @@ const {createApp} = Vue;
 //Dichiaro le variabili
 let compitoBucato = {
     "text": 'Fare il bucato',
-    "done": [true, false],
+    "done": [true],
 };
 
 let compitoLetto = {
     "text": 'Fare il letto',
-    "done": [true, false],
+    "done": [true],
 };
 
+let cucinareCena = {
+    "text": 'Cucinare cena',
+    "done": [false],
+};
 
+let cucinarePranzo = {
+    "text": 'Cucinare pranzo',
+    "done": [false],
+};
+
+//creo la struttura dati
 createApp ({
     data () {
         return{
@@ -24,6 +34,9 @@ createApp ({
             tasks: [
                 compitoBucato.text,
                 compitoLetto.text,
+                cucinareCena.text,
+                cucinarePranzo.text,
+                
             ]
         }
     },
